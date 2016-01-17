@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Session6</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_notifications_demo">NotificationsDemoActivity</string>
+    <string name="title_activity_special_quote">SpecialQuoteActivity</string>
+    <string name="title_activity_alarm_demo">AlarmDemoActivity</string>
+    <string name="title_activity_broadcasts_demo">BroadcastsDemoActivity</string>
+    <string name="title_activity_service_demo">ServiceDemoActivity</string>
+    <string name="title_activity_sync_adapter_demo">SyncAdapterDemo</string>
 </resources>

@@ -2,12 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.felixidan.session6">
 
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".Session6Application"
+        >
         <activity
             android:name=".MenuActivity"
             android:label="@string/app_name">
@@ -17,6 +25,93 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity
+            android:name=".NotificationsDemoActivity"
+            android:label="@string/title_activity_notifications_demo"
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.felixidan.session6.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".QuotesListActivity"
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.felixidan.session6.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".QuoteActivity"
+            android:parentActivityName=".QuotesListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.felixidan.session6.QuotesListActivity" />
+        </activity>
+        <activity
+            android:name=".SpecialQuoteActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/title_activity_special_quote"
+            android:taskAffinity="" />
+        <activity
+            android:name=".AlarmDemoActivity"
+            android:label="@string/title_activity_alarm_demo"
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.felixidan.session6.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".BroadcastsDemoActivity"
+            android:label="@string/title_activity_broadcasts_demo"
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.felixidan.session6.MenuActivity" />
+        </activity>
 
+        <receiver android:name=".DemoBroadcastReceiver">
+            <intent-filter>
+                <action android:name="session6.action.toast" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ServiceDemoActivity"
+            android:label="@string/title_activity_service_demo" />
+
+        <service
+            android:name=".DemoIntentService"
+            android:exported="false" />
+
+        <activity
+            android:name=".SyncAdapterDemoActivity"
+            android:label="@string/title_activity_sync_adapter_demo" />
+
+        <provider
+            android:name=".SampleContentProvider"
+            android:authorities="com.felixidan.example.session6.syncadapter.provider"
+            android:enabled="true"
+            android:exported="false"
+            android:syncable="true"
+            />
+
+        <service android:name=".FakeAuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <service android:name=".DemoSyncAdapterService"
+                 android:exported="true"
+                 android:process=":sync"
+                >
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter" />
+        </service>
+    </application>
 </manifest>

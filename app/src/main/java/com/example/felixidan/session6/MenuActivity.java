@@ -1,9 +1,11 @@
 package com.example.felixidan.session6;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MenuActivity extends ActionBarActivity {
 
@@ -33,5 +35,34 @@ public class MenuActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToNotificationsDemo(View view) {
+        goToActivity(NotificationsDemoActivity.class);
+    }
+
+    public void goToAlarmsDemo(View view) {
+        goToActivity(AlarmDemoActivity.class);
+    }
+
+    public void goToQuotesList(View view) {
+        goToActivity(QuotesListActivity.class);
+    }
+
+    public void goToBroadcastsDemo(View view) {
+        goToActivity(BroadcastsDemoActivity.class);
+    }
+
+    private void goToActivity(Class<?> target){
+        Intent i = new Intent(this, target);
+        startActivity(i);
+    }
+
+    public void goToServiceDemo(View view) {
+        goToActivity(ServiceDemoActivity.class);
+    }
+
+    public void goToSyncAdapterDemo(View view) {
+        goToActivity(SyncAdapterDemoActivity.class);
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="quotes">
+        <item>You can do anything, but not everything. —David Allen </item>
+        <item>Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. —Antoine de Saint-Exupéry </item>
+        <item>The richest man is not he who has the most, but he who needs the least. —Unknown Author</item>
+        <item>You miss 100 percent of the shots you never take. —Wayne Gretzky"</item>
+        <item>Courage is not the absence of fear, but rather the judgement that something else is more important than fear. —Ambrose Redmoon</item>
+        <item>You must be the change you wish to see in the world. —Gandhi</item>
+        <item>When hungry, eat your rice; when tired, close your eyes. Fools may laugh at me, but wise men will know what I mean. —Lin-Chi</item>
+        <item>The third-rate mind is only happy when it is thinking with the majority. The second-rate mind is only happy when it is thinking with the minority. The first-rate mind is only happy when it is thinking. —A. A. Milne</item>
+        <item>To the man who only has a hammer, everything he encounters begins to look like a nail. —Abraham Maslow</item>
+        <item>We are what we repeatedly do; excellence, then, is not an act but a habit. —Aristotle"</item>
+    </string-array>
+</resources>
